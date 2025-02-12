@@ -71,13 +71,12 @@ async def update_book(book_id: int, book: Book) -> Book:
         content=db.update_book(book_id, book).model_dump(),
     )
 
-@router.get("/test", response_model=Book, status_code=status.HTTP_200_OK)
-async def update_book(book_id: int, book: Book) -> Book:
+@router.get("/test", status_code=status.HTTP_200_OK)
+async def update_book():
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content="Testing,
+        content={"message": "Testing"}
     )
-
 
 @router.delete("/{book_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_book(book_id: int) -> None:
