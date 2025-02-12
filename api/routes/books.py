@@ -48,15 +48,6 @@ async def get_books() -> OrderedDict[int, Book]:
     return db.get_books()
 
 
-@router.get(
-        "/test"
-)
-def test():
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content={"message": "testing"}
-    )
-
 @router.get("/{book_id}")
 async def get_book(book_id: int):
     book = db.get_book(book_id)  
