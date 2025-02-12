@@ -17,4 +17,4 @@ jobs:
           script: |
             cd /home/reavsuite/hng-task-2
             git pull origin main
-            sudo -S systemctl restart fastapi
+            sudo systemctl restart fastapi
